@@ -1,0 +1,13 @@
+.Addbtn{
+    padding: 6px;
+    width: 5%;
+    /* display: inline; */
+    position: absolute;
+    left: 62%;
+    top: 12%;
+    background-color: lightgreen;
+    border: none;
+    border-radius: 2px;
+    font-weight: bolder;
+    
+}

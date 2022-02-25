@@ -1,0 +1,19 @@
+.ItemContainer{
+    text-align: left;
+    margin-left: 10px;
+}
+.todoitem{
+    position: relative;
+    bottom: 12px;
+
+}
+.delbtn{
+ float: right;
+ margin-right: 15px;
+ background-color: red;
+ border: none;
+ padding: 6px;
+ color: wheat;
+ font-weight: bold;
+ border-radius: 2px;
+}
