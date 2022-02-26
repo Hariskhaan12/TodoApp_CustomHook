@@ -1,21 +1,41 @@
 import { React,useState } from "react";
 function TodoHook() {
-    console.log('todoHook');
-    const [Alltodo, setAllTodo] = useState([])
-
-    let addTodo=(newTodo)=>{
-        setAllTodo([...Alltodo,newTodo]);
-        
+    let initialTodo;
+    if(localStorage.getItem("todos")===null)
+    {
+        initialTodo=[]
     }
-    localStorage.setItem("todos",JSON.stringify(Alltodo))
+    else{
+        initialTodo=JSON.parse(localStorage.getItem("todos"))
+    }
+
+
+    const [Alltodo, setAllTodo] = useState(initialTodo)
+    const [CurrValue, setCurrValue] = useState('');
+    
+    let addTodo=(newTodo)=>{
+        if(newTodo!="")
+        {
+            setAllTodo([...Alltodo,newTodo]);
+            setCurrValue("");
+            
+        }
+        else{
+            alert("You can't Enter the Empty Todo")
+        }
+
+       
+    }
     let DeleteTodo=(index)=>{
         Alltodo.splice(index,1);
         setAllTodo([...Alltodo]);
-        // console.log(Alltodo);
     }
+    let DeleteAll=()=>{
+        setAllTodo([]);
+    }
+    
 
-
-return [addTodo,DeleteTodo,Alltodo]
+return [addTodo,DeleteTodo,Alltodo,setCurrValue,CurrValue,DeleteAll]
   
 }
 
